@@ -78,7 +78,7 @@ class SnakeGameAgent:
         # 3. check if game over
         rewards = 0
         game_over = False
-        if self._is_collision() or self.frame_iteration > 100*len(self.snake):
+        if self.is_collision() or self.frame_iteration > 100*len(self.snake):
             game_over = True
             rewards = -10
             return rewards, game_over, self.score
@@ -97,7 +97,7 @@ class SnakeGameAgent:
         # 6. return game over and score
         return rewards, game_over, self.score
 
-    def _is_collision(self,pt=None):
+    def is_collision(self, pt=None):
         if pt is None:
             pt = self.head
         # hits boundary
