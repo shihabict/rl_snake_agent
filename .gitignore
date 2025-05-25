@@ -1,0 +1,11 @@
+__pycache__
+venv/
+snakeenv/
+tests/
+.idea/
+.env
+*.log
+*.pdf
+*.pyc
+*.ipynb_checkpoints
+*.zip
