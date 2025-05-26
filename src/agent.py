@@ -15,10 +15,10 @@ class Agent:
     def __init__(self):
         self.n_games = 0
         self.epsilon = 0  # control randomness
-        self.gamma = 0 # discount rate
+        self.gamma = 0.9 # discount rate
         self.memory = deque(maxlen=MAX_MEMORY) # remove from left if exceed the memory length
-        self.model = None
-        self.trainer = None
+        self.model = Linear_QNet(11,256,3)
+        self.trainer = QTrainer(self.model,LR, self.gamma)
 
     def get_state(self,game):
         head = game.snake[0]
